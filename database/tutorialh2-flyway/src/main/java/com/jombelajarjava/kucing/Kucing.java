@@ -113,10 +113,11 @@ public class Kucing {
      */
     @Override
     public String toString() {
-        return getClass().getSimpleName() + " [" +
-                "id=" + id + ", " +
-                "nama=" + nama + ", " +
-                "jantina=" + jantina + ", " +
-                "tarikhLahir=" + tarikhLahir + "]";
+        return "Kucing{" +
+                "id=" + id +
+                ", nama='" + nama + '\'' +
+                ", jantina=" + jantina +
+                ", tarikhLahir=" + tarikhLahir +
+                '}';
     }
 }
