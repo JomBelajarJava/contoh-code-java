@@ -1,14 +1,13 @@
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import greeting.GreetingModule;
 import greeting.GreetingService;
-import greeting.impl.GreetingRepositoryImpl;
-import greeting.impl.GreetingServiceImpl;
-import user.impl.UserLocaleRepositoryImpl;
-import user.impl.UserServiceImpl;
+import user.UserModule;
 
 public class Main {
     public static void main(String[] args) {
-        final GreetingService greetingService = new GreetingServiceImpl(
-                new UserServiceImpl(new UserLocaleRepositoryImpl()),
-                new GreetingRepositoryImpl());
+        final Injector injector = Guice.createInjector(new UserModule(), new GreetingModule());
+        final GreetingService greetingService = injector.getInstance(GreetingService.class);
 
         System.out.println(greetingService.getGreeting("Kassim"));
     }
