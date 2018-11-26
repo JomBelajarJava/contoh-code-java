@@ -11,5 +11,6 @@ public class Main {
                 new GreetingRepositoryImpl());
 
         System.out.println(greetingService.getGreeting("Kassim"));
+        System.out.println(greetingService.getGreeting("Johnny"));
     }
 }
